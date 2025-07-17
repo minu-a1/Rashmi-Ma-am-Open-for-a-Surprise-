@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            background-image: url("https://media.tenor.com/7TsSID1mzUIAAAAC/glitter-purple.gif");
+            height: 100%;
+            margin: 30;
+            background-repeat: round;
+            background-attachment: fixed;
+        }
+
+        .card {
+            position: relative;
+            width: 400px;
+            height: 625px;
+            border: 10px solid #9612eb;
+            margin: 60px auto 0 auto;
+            box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0)),
+              url("https://media.licdn.com/dms/image/v2/C4E03AQEOIpzew_0RCg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516869093216?e=1758153600&v=beta&t=huIkP6K2un-uyT-Abr7F7EGyxKniTlXgTrEbHHy5S9M");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: #2e11b1;
+        }
+
+        .card .text-container {
+            width: 80%;
+            height: 80%;
+            margin: auto;
+        }
+
+        .strikethrough {
+            text-decoration: line-through;
+        }
+
+        .card .text-container #head {
+            font-family: 'Nobile', sans-serif;
+            font-size: 1.5em;
+            margin: 410px auto 1px auto;
+            font-weight: bolder;
+            color: #f9f8f6;
+            padding: 10px 20px;
+            border: 3px solid transparent;
+            border-radius: 12px;
+
+            background:
+              linear-gradient(#000, #000) padding-box,
+              linear-gradient(135deg, #FF69B4, #8A2BE2) border-box;
+
+            box-shadow: 0 0 8px #FF69B4, 0 0 12px #8A2BE2;
+
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 5px #FF69B4, 0 0 10px #8A2BE2;
+            }
+            to {
+                box-shadow: 0 0 15px #FF69B4, 0 0 25px #8A2BE2;
+            }
+        }
+
+        .card p {
+            font-size: 1.1em;
+            line-height: 1;
+            font-family: 'Nobile';
+            color: rgb(232, 228, 228);
+            font-style: italic;
+            text-align: center;
+            margin: 20px auto 0px auto;
+        }
+
+        .card .front {
+            position: absolute;
+            width: 100%;
+            height: 10%;
+            margin: -10px 0px 0px -10px;
+            border: 10px solid #9612eb;
+            backface-visibility: hidden;
+            background-color: #9612eb;
+            background-size: contain;
+            transform-style: preserve-3d;
+            transform-origin: 0% 50%;
+            transform: perspective(800px) rotateY(0deg);
+            transition: all 0.8s ease-in-out;
+        }
+
+        .card:hover .front {
+            transform: perspective(800px) rotateY(-170deg);
+            background-color: #41718d;
+        }
+
+        .card:hover .back {
+            transform: perspective(800px) rotateY(-170deg);
+            box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.3),
+              inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
+            background-image: url("https://media.giphy.com/media/PyOzvC8NUwjGE/giphy.gif");
+            background-repeat: round;
+        }
+
+        .card .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 10px solid #9612eb;
+            margin: -10px 0px 0px -10px;
+            backface-visibility: visible;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, .5));
+            transform-style: preserve-3d;
+            transform-origin: 0% 50%;
+            transform: perspective(800px) rotateY(0deg);
+            transition: all 0.8s ease-in-out;
+            background-color: url("https://media.giphy.com/media/hHFwBtSBfaJ9u/giphy.gif");
+            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .imgset {
+            position: relative;
+            z-index: 1;
+            margin-bottom: -215px;
+        }
+
+        .imgset img {
+            box-shadow: 0px 6px 11px 7px rgba(0, 0, 0, 0.22);
+            border-radius: 5px;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Responsive part starts here */
+        @media screen and (max-width: 480px) {
+            .card {
+                width: 95%;
+                height: auto;  /* flexible height */
+                margin: 20px auto;
+                border-width: 5px;
+                box-shadow: inset 5px 0px 7px 0px rgba(0, 0, 0, 0.1);
+            }
+
+            .card .text-container {
+                width: 95%;
+                height: auto;
+                margin: 10px auto;
+            }
+
+            .card .text-container #head {
+                font-size: 1.2em;
+                margin: 300px auto 1px auto;
+                padding: 8px 15px;
+            }
+
+            .card p {
+                font-size: 1em;
+                margin: 15px auto 0 auto;
+            }
+
+            .card .front {
+                border-width: 5px;
+                height: auto;
+                margin: -5px 0 0 -5px;
+            }
+
+            .card .back {
+                border-width: 5px;
+                margin: -5px 0 0 -5px;
+            }
+
+            .imgset img {
+                margin-bottom: -100px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+  <div class="back"></div>
+  <div class="front">
+    <div class="imgset">
+         <img src="https://1.bp.blogspot.com/-Mgj9-rbs65E/XfMoPSD5gtI/AAAAAAAAURk/NBokE2gSS2cTSJ2em5lZ5hJDuTtRN7UVwCLcBGAsYHQ/s1600/2713997.png"   height="280"  alt="Birthday Image">
+    </div>
+  </div>
+  <div class="text-container">
+    <p id="head">Happy Birthday <br> Rashmi Shetty Ma'am</p>
+    <p>
+You are the precious gem of MJR, giving everyone a chance to grow. <br>
+Thank you from the heart for your love and support. <br>
+May this year bring you happiness, good health, and success. 
+<br> <br>
+</p>
+   <p style="margin-top: 30px; font-weight: bolder; font-style: italic; color: #e6f205; font-size: larger; text-align: center; text-shadow: 0 0 6px rgba(253, 253, 251, 0.8); padding: 10px 0;">
+  Have a very special day! <br>
+  Best wishes from Minakshi Pathak
+</p>
+  </div>
+</div>
+</body>
+</html>
